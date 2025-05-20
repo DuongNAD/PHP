@@ -96,6 +96,7 @@
 <body>
     <div class="header"> <div><h2>Cửa hàng điện tử</h2></div>
         <div><a href="">Giỏ hàng</a></div>
+        <div><a href="themproduct">Thêm sản phẩm</a></div>
     </div>
 
     <div class="products-container"> <div class="product-card"> <div>
