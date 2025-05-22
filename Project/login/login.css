@@ -1,11 +1,9 @@
 body {
-  margin-top: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   background-image: linear-gradient(to bottom right, #9a43f7, #ff6fd2);
-  min-height: 100vh;
 }
 
 h1,
@@ -277,11 +275,17 @@ p {
   flex: 1;
   padding-right: 100px;
   font-size: 0.8rem;
+  
 }
-.title .name_shop a,
+
+.title .name_shop a{
+   text-decoration: none; 
+    color: #333; 
+    font-weight: bold; 
+}
 .title .help a {
     text-decoration: none; 
-    color: #333; 
+    color: #7851a9;
     font-weight: bold; 
 }
 @media (max-width: 1024px) {
@@ -301,12 +305,69 @@ p {
     flex-direction: column;
     align-items: center;
   }
+   .name_shop, .help {
+      padding-left: 50px; 
+      padding-right: 50px;
+  }
 }
 @media (max-width: 480px) {
   .welcome p{
     font-size: 0.8rem;
   }
   body{
+    padding-top: 50px; 
     margin-top: 0;
+  }
+    .text-overlay {
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 90%; 
+    padding: 10px;
+    box-sizing: border-box; 
+  }
+
+  .text-overlay h2 {
+    font-size: 1.5em;
+  }
+
+  .welcome img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; 
+  }
+  
+  .login_form {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+  }
+
+  .username,
+  .password {
+    max-width: 100%; 
+    padding: 8px 15px 8px 15px; 
+  }
+
+  .name_shop, .help {
+      padding-left: 20px; 
+      padding-right: 20px;
+      font-size: 0.9rem; 
+  }
+  .help {
+      font-size: 0.7rem;
+  }
+  .submit {
+      padding: 10px 40px; 
+      font-size: 0.9em; 
+  }
+  .input {
+      gap: 15px; 
+  }
+  .remember-forgot {
+      flex-direction: column; 
+      align-items: flex-start; 
+      gap: 10px;
   }
 }

@@ -65,12 +65,8 @@
     function _login($username, $password)
     {
         global $Employee;
-        if (array_key_exists($username, $Employee)) {
-
-            $stored_password = $Employee[$username];
-            if ($stored_password === $password) {
-                return true;
-            }
+        if ( isset($Employee[$username]) && array_key_exists($username, $Employee)  && $Employee[$username] == $password ) {
+            return true;
         }
         return false;
     }
@@ -83,6 +79,7 @@
             'Le_Van_C' => 'C_lo_vo_92',
             'Pham_ThiD' => 'De_PT_68',
             'Doan_Van_E' => 'E_v58',
+            'admin'=>'123456'
         ];
         $username = $_POST['username'];
         $password = $_POST['password'];
