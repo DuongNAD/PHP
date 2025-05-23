@@ -7,17 +7,17 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/demo/Project/login/login.css">
 </head>
 
 <body>
     <div class="form">
         <div class="title">
             <div class="name_shop">
-                <a href="">DuongAnh Store ღ</a>
+                <a href="/demo/Project/login/login.php">DuongAnh Store ღ</a>
             </div>
             <div class="help">
-                <a href="">Bạn cần giúp gì</a>
+                <a href="/demo/Project/How I can help you/help.html">Bạn cần giúp gì</a>
             </div>
         </div>
         <div class="form_input">

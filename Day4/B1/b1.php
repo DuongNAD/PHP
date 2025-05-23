@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +56,7 @@
                 </div>
                 <div class="register">
                     <p>Click here to</p>
-                    <a href="">Register</a>
+                    <a href="giohang.php">Register</a>
                 </div>
             </form>
         </div>
@@ -60,6 +64,7 @@
 
 
     <?php
+    
     $message ='';
     $isSuccess = false;
     function _login($username, $password)
@@ -72,7 +77,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+       
         $Employee = [
             'NguyenVan_A' => 'abc123',
             'Tran_Thi_B' => 'B715',
@@ -81,13 +86,20 @@
             'Doan_Van_E' => 'E_v58',
             'admin'=>'123456'
         ];
-        $username = $_POST['username'];
+        $username = $_POST['username']; 
+        $_SESSION['username'] = $username;
+
         $password = $_POST['password'];
         $loginResult = _login($username, $password);
 
         if($loginResult){
             $message = 'Đăng nhập thành công!';
+            echo $_SESSION['username'] ;
             $isSuccess = true;
+            header('Location: giohang.php');
+           
+            exit();
+            
         }
         else{
             $message = 'Đăng nhập thất bại. Tên đăng nhập hoặc mật khẩu không đúng.';
@@ -98,6 +110,7 @@
 
         echo '<div class="' . ($isSuccess ? 'success-message' : 'error-message') . '">' . $message . '</div>';
     }
+    
     ?>
 </body>
 
