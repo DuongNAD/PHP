@@ -3,7 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  background-image: linear-gradient(to bottom right, #9a43f7, #ff6fd2);
+  background-image: linear-gradient(to bottom right, #9a43f7, #c93f9dde);
 }
 
 h1,
@@ -236,10 +236,12 @@ p {
 
 .design {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-self: center;
   gap: 6px;
+  margin-top: 20px;
+  color: #ffffff;
+  padding-bottom: 20px;
 }
 
 .design img {
@@ -277,7 +279,12 @@ p {
   font-size: 0.8rem;
   
 }
-
+.name_shop a{
+  margin-right: 10px;
+}
+.fas fa-mobile-alt{
+  color: white;
+}
 .title .name_shop a{
    text-decoration: none; 
     color: #333; 

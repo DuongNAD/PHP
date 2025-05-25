@@ -140,13 +140,12 @@ if (!empty($cart_items)) {
 
         <?php
 
-            if (!empty($cart_items)) { // Chỉ lặp nếu giỏ hàng không rỗng
+            if (!empty($cart_items)) { 
                 foreach ($cart_items as $product_id => $quantity) {
-                    if (isset($products_data[$product_id])) { // Cần biến $products_data
-                        $item_data = $products_data[$product_id]; // Lấy dữ liệu chi tiết sản phẩm
-                        $row_total = $item_data['price'] * $quantity; // Tính tổng tiền cho dòng này
+                    if (isset($products_data[$product_id])) { 
+                        $item_data = $products_data[$product_id]; 
+                        $row_total = $item_data['price'] * $quantity;
 
-                        // --- In ra hàng (<tr>) cho sản phẩm hiện tại ---
         ?>
             <tr>
                 <td><img src="<?php echo $item_data['image_path']; ?>" alt="<?php echo $item_data['name']; ?>"></td>
@@ -157,10 +156,9 @@ if (!empty($cart_items)) {
                 </tr>
         <?php
                     }
-                    // Nếu sản phẩm không tồn tại trong $products_data, hàng này sẽ không được in ra
+
                 }
             } else {
-                // --- Hiển thị thông báo nếu giỏ hàng trống ---
         ?>
             <tr>
                 <td colspan="5" style="text-align:center;">Giỏ hàng của bạn đang trống.</td>
@@ -174,8 +172,6 @@ if (!empty($cart_items)) {
 
     <div class="cart-summary">
         <?php
-            // --- Vị trí để bạn hiển thị tổng số lượng và tổng tiền ---
-            // Biến $total_quantity và $total_amount đã được tính toán ở phần đầu file.
         ?>
         <p><strong>Tổng số lượng:</strong> <?php echo $total_quantity; ?></p>
         <p><strong>Tổng tiền:</strong> <?php echo number_format($total_amount, 0, ',', '.'); ?> VND</p>
