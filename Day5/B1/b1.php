@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($loginResult) {
             $_SESSION['message'] = 'Đăng nhập thành công! Đang chuyển hướng...';
             $_SESSION['isSuccess'] = true;
-            $_SESSION['last_action'] = 'login'; // Đánh dấu hành động cuối cùng là login
+            $_SESSION['last_action'] = 'login'; 
             header('Location: ' . $_SERVER['PHP_SELF']);
             exit();
         } else {
@@ -49,20 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($reg_password !== $confirm_password) {
             $_SESSION['message'] = 'Mật khẩu và xác nhận mật khẩu không khớp.';
             $_SESSION['isSuccess'] = false;
-            $_SESSION['show_register_form'] = true; // Giữ form đăng ký nếu lỗi
+            $_SESSION['show_register_form'] = true; 
         } elseif (array_key_exists($reg_username, $Employee)) {
             $_SESSION['message'] = 'Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.';
             $_SESSION['isSuccess'] = false;
-            $_SESSION['show_register_form'] = true; // Giữ form đăng ký nếu lỗi
+            $_SESSION['show_register_form'] = true; 
         } else {
-            // Đăng ký thành công
             $_SESSION['message'] = 'Đăng ký thành công! Vui lòng đăng nhập.';
             $_SESSION['isSuccess'] = true;
-            $_SESSION['show_register_form'] = false; // Chuyển về form đăng nhập
-            // Trong dự án thực tế, bạn sẽ lưu $reg_username, $reg_email, $reg_password vào database tại đây
-            // ví dụ: $Employee[$reg_username] = $reg_password; (chỉ minh họa, không dùng mảng tĩnh cho thực tế)
+            $_SESSION['show_register_form'] = false; 
         }
-        // Chuyển hướng về chính trang hiện tại để hiển thị thông báo và form đúng
+
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit();
     }
