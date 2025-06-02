@@ -2,7 +2,7 @@
 
 include 'header.php';
 
-$query = "SELECT sinh_vien.*, lop_hoc.name as ten_lop FROM sinh_vien JOIN lop_hoc on sinh_vien.lop_hoc_id = lop_hoc.id order by sinh_vien.id DESC";
+$query = "SELECT sinh_vien.*, lop_hoc.name as ten_lop FROM sinh_vien JOIN lop_hoc on sinh_vien.lop_hoc_id = lop_hoc.id order by sinh_vien.id ASC";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -33,6 +33,21 @@ $result = mysqli_query($conn, $query);
         </tr>
     <?php endwhile; ?>
 </table>
+<h2>Thêm sinh viên</h2>
+<form action="" method="POST">
+
+    <label for="name_input">Nhập họ tên</label>
+    <input type="text" name="name_input" id="name_input">
+
+    <label for="email_input">Nhập email</label>
+    <input type="email" name="email_input" id="email_input">
+
+    <label for="phone_input">Nhập số điện thoại</label>
+    <input type="text" name="phone_input" id="phone_input">
+
+    <label for="lopId">Id lớp học</label>
+    <input type="number" name="lopId" id="lopId">    
+</form>
 <?php
 include 'footer.php';
 ?>
