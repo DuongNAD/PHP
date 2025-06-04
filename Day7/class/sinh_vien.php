@@ -33,21 +33,7 @@ $result = mysqli_query($conn, $query);
         </tr>
     <?php endwhile; ?>
 </table>
-<h2>Thêm sinh viên</h2>
-<form action="" method="POST">
-
-    <label for="name_input">Nhập họ tên</label>
-    <input type="text" name="name_input" id="name_input">
-
-    <label for="email_input">Nhập email</label>
-    <input type="email" name="email_input" id="email_input">
-
-    <label for="phone_input">Nhập số điện thoại</label>
-    <input type="text" name="phone_input" id="phone_input">
-
-    <label for="lopId">Id lớp học</label>
-    <input type="number" name="lopId" id="lopId">    
-</form>
+<button type="submit" name="edit"><a href="add_sv.php">Thêm sinh viên</a></button>
 <?php
 include 'footer.php';
 ?>
