@@ -9,5 +9,4 @@ $conn -> query("insert into orders (title) values('$title')");
 $order_id = $conn->insert_id;
 
 echo "Don hang dc tao thanh cong";
-$conn->close();
 ?>
