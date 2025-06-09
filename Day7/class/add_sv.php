@@ -27,9 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add'])) {
         if (empty($name) || empty($email) || empty($phone) || $class_id == 0) {
             $message = "Lỗi: Vui lòng điền đầy đủ thông tin và chọn lớp học.";
         } else {
-            $name_escaped = mysqli_real_escape_string($conn, $name);
-            $email_escaped = mysqli_real_escape_string($conn, $email);
-            $phone_escaped = mysqli_real_escape_string($conn, $phone);
 
             $query = "INSERT INTO sinh_vien(name, email, phone, lop_hoc_id) VALUES (
                         '$name_escaped',
